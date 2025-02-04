@@ -1,65 +1,142 @@
-/* Estilização geral */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-*{
-    color: black;
-    font-family: 'Roboto';
+body{
+    background-color: grey;
+}
+nav {
+    background-color: #000000;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: hsl(0, 0%, 100%);
-    margin: 0;
+
+nav ul {
+    list-style: none;
     padding: 0;
     display: flex;
-    height: 100vh;
-
-}
-
-nav {
-    background-color: #F5F5BD;
-    position: fixed;
-    display: flex;
-    top: 0;
-    width: 100%;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-    
+    gap: 20px;
 }
 
 
-nav ul{
-
-    justify-content: space-between;
-    gap: 3px;
-    display: inline-block;
-    list-style: none;
-    display: flex;
-    margin-right: 20px;
-
+nav li {
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: background 0.3s ease;
 }
 
-li, a{
-    background-color: #F5F5BD;
-    padding: 7px 7px;
-    font-size: 18px;
-    border: none;
-    border-radius: 3px;
-    display: flex;
+
+nav li:hover {
+    background-color: #D4C1B2;
+}
+
+
+nav a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
-    justify-content: center;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+.container li {
+    background-color: #3F5F53;
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+    width: 300px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin: 10px;
+}
+
+
+.form1 {
+    flex-direction: column;
+    height: 600px;
+    width: 500px;
+    background-color: #ffbbbb;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.botao_bo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.b {
+    text-align: center;
+    font-size: 20px;
+}
+
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+button.titi {
+    background-color: #4CAF50;
     color: white;
 }
+
+
+button.fifi {
+    background-color: #D9534F;
+    color: white;
+}
+
+
+.aaaa1{
+    margin-top: 50px;
+    gap: 50px;
+    padding: 10px;
+    height: 600px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    margin-left: 35%;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+}
+
+.aquiles{
+    background-color: #0056b3;
+    height: 900px;
+    width: 300px;
+}
+
+.socorro{
+    width: 400px
+}
+
+s{
+    display: ;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    height: 30px;
+}
+
 
 
 /* Estilização do formulário */
 form {
     justify-content: center;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    margin-left: 35%;
+    height: 400px;
     width: 400px;
     align-items: center;
     display: flex;
@@ -92,14 +169,424 @@ button:hover {
 
 }
 
+/* ESSA É A PARTE DE MANIPULAÇÃO DO CADASTRO ----------------------------------------------------------------------------------*/
+.corpo_cadastro{
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* O corpo vai abordar todo o cadastro */
+  height: 600px;
+  margin-top: 100px;
+  width: 500px;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-color: #7daf98;
+  border: solid black;
+  border-radius: 8px;
+}
+
+.form_cadastro{
+    justify-content:center;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    height: 600px;              /* Essa é a parte que vai abordar o formulário em si, */
+    width: 400px;
+    align-items: center;
+    display: flex;
+    background-color: rgb(159, 114, 114);
+    flex-direction: column;
+    border: solid black;
+    border-radius: 10px;
+    gap: 15px;
+}
 
 
+.form-control{
+    border: none;
+    height: 25px; /* Vai abordar o INPUT */
+    width: 100%;
+    border-radius: 4px;
+}
+
+.test{
+    text-align: right;
+    margin-bottom: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes blurfocusEffect {
+    0% { filter: blur(40px); }
+    50% { filter: blur(0px);} /* Vai meio que 'desfocar' a imagem por alguns segundos*/
+    100% { filter: blur(40px);}
+}
+
+.supC{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url('..imagens\kiki.gif') no-repeat center center;
+    background-size: cover;
+    animation: blurFocusEffect 5s infinite alternate;
+}
 
 
+/* ESSA É A PARTE QUE VAI ABORDAR O 'create_delivery' ---------------------------------------------------------------------------------------------*/
+
+.supCD{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #c9c9c9;
+}
 
 
+.corpo_criacao1{
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* O corpo vai abordar todo o cadastro */
+    height: 99%;
+    width: 450px;
+    justify-content: flex-start;
+    min-height: 100vh;
+    /*background-image: url('testt.jpeg');*/
+    background-color: #fffafa;
+    border: solid 10px black;
+    border-radius: 8px;
+} 
 
 
- 
+.form_create1{
+    display: flex;
+    height: 600px;
+    width: 300px;
+    flex-direction: column;
+    gap: 15px; 
+    padding: 15px;
+    background-color: #ff8800;
+    border: solid 5px black;    
+    border-radius: 8px;
+    margin-top: 0;
+    
+}
+
+.simbolo1{
+    font-size: 400px;
+    color:black;
+    margin-left: 20%;
+}
+
+.simbolo2{
+    font-size: 30px;
+    color: rgb(0, 0, 0)
+}
+
+.simbolo3{
+    margin-top: 0;
+}
+
+.inputcreate{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.vou1{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    text-align: center;
+    height: 400px;
+    width: 600px;
+}
+
+.come{
+    display: flex;
+    justify-content:center;
+    font-size: 100px;
+    color: #fbfbfb;
+    font-family: papyrus, copperplate, fantasy;
+}
+
+.meubotao{
+    background-color: #9aa4f6;
+    width: 200px;
+    border: none;
+    border-radius: 13px;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+.meubotao:hover{
+    background-color: rgb(158, 155, 192);
+}
+
+/*ESSA É A PARTE DE MODIFICAÇÃO DO 'editDelivery' */
+
+.container{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: visible;
+    max-width: none;
+    height: 700px;
+    margin-left: 35%;
+    background-color: #ff8c00;
+    width: 500px;
+    gap: 20px;
+    border: 5px solid;
+    border-radius: 10px;
+    
+    
+}
 
 
+.titi{
+    gap: 20px;
+    margin-top: 0;
+}
+
+.form1, .form2{
+    padding: 20px;
+    justify-content: space-around;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.form1{
+    margin-bottom: 0;
+    background-color: #ffc368;
+    border: 3px solid;
+    border-radius: 10px;
+}
+
+.form2{
+    margin-top: 0;
+    height: 40px;
+    border:none;
+    border-radius: 15px;
+    background-color: #ff8c00;
+    width: 400px;
+}
+
+.botao_bo{
+    display: flex;
+    gap: 10px;
+}
+
+.meubotao2{
+    padding: 10px, 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.titi{
+    background-color: green;
+}
+
+.titi:hover{
+    background-color: greenyellow;
+}
+
+.fifi{
+    background-color: rgb(255, 81, 0);
+}
+
+.fifi{
+    background-color: #ff0000;
+}
+
+.flask{
+    width: 200px;
+    background-color: #ff3535;
+}
+
+.lamb{
+    margin-bottom: 0;
+    gap: 10px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+}
+
+.container input{
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.aaaa{
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 00; }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+.corpinho{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url('motozinhaa.gif');
+    background-size: 200% 200%;
+    animation: moveBackground 10s infinite linear;
+
+}
+
+
+/* ESSA É A SEÇÃO DE MODIFICAÇÃO DO 'editProfile' ------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.form_profile{
+    display: flex;
+    height: 600px;
+    width: 400px;
+    flex-direction: column;
+    gap: 15px; 
+    padding: 15px;
+    background-color: #737eff;
+    border: 3px solid rgb(0, 0, 0);    
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgb(245, 239, 239);
+    margin-top: 0;
+    margin-right: 500px;
+    
+}
+
+.corpinho2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: ('../imagens/kiki.gif');
+    background-size: 100% 100%;
+    animation: moveBackground 10s infinite linear;
+
+}
+
+.algumacoisa{
+    margin-top: 100px;
+    display: block;
+    align-items: center;
+    width: 60%;
+    text-align: center;
+    gap: 30px;
+    color: #0056b3;
+    font-size: 30px;
+}
+
+.checkboxx{
+    display: block;
+    gap: 14px;
+    align-items: center;
+}
+
+.titulo40{
+    font-family: papyrus, copperplate, fantasy;
+}
+
+/* Correções para remover espaçamentos indesejados */
+
+.cliente {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 60px;  /* Reduzindo o espaçamento do topo */
+    font-size: 10px; 
+    gap: 20px;
+}
+
+.cart-container, .delivered-item, .cart-item {
+    width: calc(33.333% - 10px);
+    height: 600px;
+    width: 400px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 5px;  /* Menor espaçamento entre os itens */
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.cart-item {
+    background-color: #fefefe;
+    margin-top: 0;
+}
+
+.cart-item .react {
+    display: flex;
+    justify-content: left;
+}
+
+.reed {
+    margin-top: 0;
+    font-size: 10px;  
+}
+
+.react {
+    background-color: #ffffff;
+    height: 70px;
+}
+
+.edit-btn {
+    background-color: green;
+    height: 40px;
+    width: 100%;
+    border: none;
+    border-radius: 13px;
+    font-size: 13px;
+}
+
+.button-container {
+    display: flex;
+    gap: 1px;  /* Espaço entre os botões */
+    align-items: center;
+}
+
+/* Sobrescrevendo configurações específicas para o formulário "no-align" */
+.no-align {
+    display: inline;
+    margin: 0; /* Remove a margem */
+}
+
+.edit-btn, .cancel-btn {
+    padding: 10px 40px;
+    font-size: 13px;
+}
+
+.meidei {
+    margin: 0;  /* Garante que o form não tenha margens inesperadas */
+    width: 100%;
+    height: 20px;
+
+}
+
+.cancel-btn {
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    margin-right: 0;  /* Remove o espaçamento à direita do botão */
+}
+
+b {
+    font-size: 30px;
+}
