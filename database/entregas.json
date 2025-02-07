@@ -80,7 +80,7 @@
         "id": 9
     },
     {
-        "status": "deliverying",
+        "status": "canceled",
         "cliente": "000.000.000-00",
         "destinatario": "18000-000",
         "descricao": "body splash",

@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 
-{% block title %}Index?{% endblock title %}
+{% block title %} Interface do Cliente {% endblock title %}
 
 {% block container %}
 
-<div class="cliente">
-    
+    <h1 class="mort">Seus pedidos</h1>
+    <div class="cliente">
         {% for item in deliveriyng %}
             <div class="cart-item">
                 <b>{{item.descricao}}</b>
                 <p class="redd">{{item.status}}</p>
                 {% for i,j in get_adress_by_cep(item.destinatario).items() %}
-                    <p class="redd">
+                    <li class="redd">
                         {{i}} : {{j}}
-                    </p>    
+                    </li>    
                 {% endfor %}
                 <p class="redd">{{item.entregador}}</p>
                 <p class="redd">{{item.id}}</p>
-                <div class="">
+                <div class="gdai">
                     <a href="/editdelivery/{{item.id}}">
                         <button class="edit-btn">
                             Editar pedido
@@ -32,22 +32,22 @@
                 </div>
             </div>
         {% endfor %}
- 
+    </div>
+    <h1 class="mort">Confirmar Entrega</h1>
+    {% for item in delivered %}
 
-        {% for item in delivered %}
-            <div class="delivered-item">
-                <b>{{item.descricao}}</b>
-                <p>{{item.status}}</p>
-                <p>{{item.destinatario}}</p>
-                <p>{{item.entregador}}</p>
-                <p>{{item.id}}</p>
+        <div class="delivered-item">
+            <b>{{item.descricao}}</b>
+            <p>{{item.status}}</p>
+            <p>{{item.destinatario}}</p>
+            <p>{{item.entregador}}</p>
+            <p>{{item.id}}</p>
 
-                <form class="meidei" action="{{url_for('confirm')}}" method="POST">
-                    <input type="hidden" name="id" value="{{item.id}}">
-                    <button class="confirm-btn">Confirmar entrega</button>
-                </form>
-            </div
-        {% endfor %}
-</div>
+            <form class="meidei" action="{{url_for('confirm')}}" method="POST">
+                <input type="hidden" name="id" value="{{item.id}}">
+                <button class="confirm-btn">Confirmar entrega</button>
+            </form>
+        </div>
+    {% endfor %}
 
 {% endblock container %}

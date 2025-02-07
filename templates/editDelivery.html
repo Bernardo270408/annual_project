@@ -27,7 +27,7 @@
             <label class="lamb">Descrição:</label>
             <input type="text" name="descricao" value="{{entrega.descricao}}">
 
-            <label class="lamb">É entregador?</label>
+            <label class="lamb">Entrega</label>
             <input type="text" name="entregador" value="{{entrega.entregador}}" {% if user != "adm" %}disabled{% endif %}>
             <input type="hidden" name="entregador" value="{{entrega.entregador}}">
             <div class="botao_bo">

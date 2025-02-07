@@ -4,43 +4,48 @@
 
 {% block container %}
 
-<h1>Pedidos</h1>
-<ul>
-    {% for i in pedidos %}
-        <li>
-            <b>{{ i["descricao"] }}</b>
-            <p>Status: {{ i["status"] }}</p>
-                {% for k,j in get_adress_by_cep(i.destinatario).items() %}
-                <li>
-                    {{k}} : {{j}}
-                </li>    
-                {% endfor %}
-            <p>Entregador: {{ i["entregador"] }}</p>
-            <p>ID: {{ i["id"] }}</p>
+    <h1 class="mort">Pedidos</h1>
+    <div class="cliente">
+        {% for i in pedidos %}
+            <div class="abib">
+                <b>{{ i["descricao"] }}</b>
+                <p class="redd" >Status: {{ i["status"] }}</p>
+                    {% for k,j in get_adress_by_cep(i.destinatario).items() %}
+                    <li class="redd">
+                        {{k}} : {{j}}
+                    </li>    
+                    {% endfor %}
+                <p class="redd">Entregador: {{ i["entregador"] }}</p>
+                <p class="redd">ID: {{ i["id"] }}</p>
 
-            <a href="/editdelivery/{{i.id}}">
-                <button>Editar entrega</button>
-            </a>
-        </li>
-    {% endfor %}
-</ul>
+                <a href="/editdelivery/{{i.id}}">
+                    <button class="ccl">Editar entrega</button>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <h1 class="mort">Usuários</h1>
+    <div class="cliente">
+        {% for cpf, usuario in usuarios.items() %}
 
-<h1>Usuários</h1>
-<ul>
-    {% for cpf, usuario in usuarios.items() %}
+            <div class="obrigado">
+                <b>{{ usuario["nome"] }}</b>
+                <br> <br>
+                <li>CPF: {{ cpf }}</li>
+                <br>
+                <li>Email: {{ usuario["email"] }}</li>
+                <br>
+                <li>Telefone: {{ usuario["tel"] }}</li>
+                <br>
+                <br>
+                <br>
+                <br>
+                <a href="/editprofile/{{cpf}}">
+                    <button class="ccl">Editar Perfill</button>
+                </a>
+            </div>
 
-        <li>
-            <b>{{ usuario["nome"] }}</b>
-            <p>CPF: {{ cpf }}</p>
-            <p>Email: {{ usuario["email"] }}</p>
-            <p>Telefone: {{ usuario["tel"] }}</p>
-
-            <a href="/editprofile/{{cpf}}">
-                <button>Editar Perfill</button>
-            </a>
-        </li>
-
-    {% endfor %}
-</ul>
+        {% endfor %}
+    </ul>
 
 {% endblock container %}

@@ -18,13 +18,13 @@
             <p>{{item.cliente}}</p>
             <p>id: {{item.id}}</p>
 
-            <form action="{{url_for('deliver')}}" method="POST">
+            <form class="meidei" action="{{url_for('deliver')}}" method="POST">
                 <input type="hidden" name="id" value="{{item.id}}">
                 <button>Entregar</button>
             </form>
 
 
-            <form action="{{url_for('refuse_delivery')}}" method="POST">
+            <form class="meidei action="{{url_for('refuse_delivery')}}" method="POST">
                 <input type="hidden" name="id" value="{{item.id}}">
                 <input type="hidden" name="cliente" value="{{item.cliente}}">
                 <input type="hidden" name="entregador" value="{{session['cpf']}}">
